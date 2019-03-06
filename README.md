@@ -87,25 +87,25 @@ A multiplayer first-person shooter game based on Unity3D, to improve players' ga
 * **CameraRotation.cs**
     * Used to rotate the scene camera in every updated frame 
 * **DoorAnimtion.cs**
-    * Used to control the door animation, detect if player enter or exit the door trigger area
+    * Used to control the door animation, detect if a player enters or exits the door trigger area
 * **GunFirstPersonView.cs**
-    * Used to control the first person view of gun shooting animation
+    * Used to control the first person views of gun shooting animation
 * **GunShooting.cs**
-    * Used to control the gun shooting action on the network domain, sending shooting function to evert client if necessary
+    * Used to control the gun shooting action on the network domain, sending shooting function to every client if necessary
 * **IKControl.cs**
-    * Used to make sure the model hold the gun on their hand no matter how they move or rotate
+    * Used to make sure models hold guns on their hands no matter how they move or rotate
 * **ImpactLifeCycle.cs**
-    * Used to destroy the bullet after several seconds to save CPU time and memory
+    * Used to destroy bullets after several seconds to save CPU time and memory
 * **NameTag.cs**
-    * Used to set other players' name above their head on local game
+    * Used to set other players' names above their head on local game
 * **NetworkManager.cs**
     * Used to control the whole network connection
 * **PlayerHealth.cs**
     * Used to calculate and update each player's health                 
 * **PlayerNetworkMover.cs**
-    * Used to synchronize player's position among different clients
+    * Used to synchronize the player's position among different clients
 * **ShowName.cs**
-    * Used to show the player name above their head
+    * Used to show the players' names above their heads
 * **WeaponPos.cs**
     * Used to move the gun to the place near the player's hand 
 
@@ -141,7 +141,7 @@ A multiplayer first-person shooter game based on Unity3D, to improve players' ga
     - Visual Studio
 
 * Recognition Method:
-    * Use Kinect for Windows SKD (BodySourceManager) to get the positions of skeleton of the player, then use those positions to distinguish the actions of moving, jumping, shooting and view rotation as game’s input.
+    * Use Kinect for Windows SKD (BodySourceManager) to get the positions of skeleton of the player, then use those positions to distinguish the actions of moving, jumping, shooting and viewing directions as game’s input.
 
     * **Shooting**：
 Use the action of lifting right arm to shoot in the game. I calculate the distance between the nodes of skeleton of right hand and right shoulder. If it reaches a critical value, then mark the action as shooting.
@@ -149,12 +149,12 @@ Use the action of lifting right arm to shoot in the game. I calculate the distan
    * **Moving**:
 Use the action of stepping front, back, left and right to move in the game. I recognize moving actions by the offset of right foot’s skeleton node on x-z plane. If the offset reaches a critical value, it will be recognized as moving.
 
-    * **Jumping**:
+   * **Jumping**:
 Use the action of jumping to jump in the game. I use offset of right foot’s skeleton node on the z-axis to recognize jumping. If the offset reaches a critical value, I recognize the action as jumping.
 
-    * **View Rotation**:
+   * **View Rotation**:
 Use right hand as a virtual mouse to control the camera rotation. I record the initial position of left hand as the initial position of the mouse. Then recognize the camera rotation by left hand’s offset.
     
-    * <img src="Images/skeleton_overview.png" style="width:110px"> </img><img src="Images/shooting.png" style="width:134px"></img> <img src="Images/jumping.png" style="width:122px"> </img><img src="Images/rotation.png" style="width:156px"></img>
+   * <img src="Images/skeleton_overview.png" style="width:110px"> </img><img src="Images/shooting.png" style="width:134px"></img> <img src="Images/jumping.png" style="width:122px"> </img><img src="Images/rotation.png" style="width:156px"></img>
 
 
